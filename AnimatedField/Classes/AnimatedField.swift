@@ -410,7 +410,7 @@ open class AnimatedField: UIView {
 
 extension AnimatedField {
     
-    func animateIn() {
+    open func animateIn() {
         isPlaceholderVisible = false
         titleLabelTextViewConstraint?.constant = 1
         titleLabelTextFieldConstraint?.constant = 1
@@ -420,7 +420,7 @@ extension AnimatedField {
         }
     }
     
-    func animateOut() {
+    open func animateOut() {
         isPlaceholderVisible = true
         titleLabelTextViewConstraint?.constant = -20
         titleLabelTextFieldConstraint?.constant = -20
