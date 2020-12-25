@@ -230,6 +230,12 @@ open class AnimatedField: UIView {
         set {
             textField.text = textField.isHidden ? nil : newValue
             textView.text = textView.isHidden ? "" : newValue
+            
+            if(newValue != nil && newValue!.count > 0){
+                titleLabel.alpha = 1.0
+            } else {
+                titleLabel.alpha = 0.0
+            }
         }
     }
     
