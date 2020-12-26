@@ -25,7 +25,7 @@ extension UIToolbar {
 
 open class AnimatedField: UIView {
     
-    @IBOutlet weak private var textField: UITextField!
+    @IBOutlet weak public var textField: UITextField!
     @IBOutlet weak private var textFieldRightConstraint: NSLayoutConstraint!
     @IBOutlet weak private var titleLabel: UILabel!
     @IBOutlet weak private var alertLabel: UILabel!
