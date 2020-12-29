@@ -238,8 +238,10 @@ open class AnimatedField: UIView {
     open func titleVisibility(){
         if(text != nil && text!.count > 0 && placeholder.count > 0){
             titleLabel.alpha = 1.0
+            titleLabel.isHidden = false
         } else {
             titleLabel.alpha = 0.0
+            titleLabel.isHidden = true;
         }
     }
     
@@ -426,6 +428,7 @@ extension AnimatedField {
         titleLabelTextFieldConstraint?.constant = 1
         UIView.animate(withDuration: 0.3) { [weak self] in
             self?.titleLabel.alpha = 1.0
+            self?.titleLabel.isHidden = false;
             self?.layoutIfNeeded()
         }
     }
@@ -436,6 +439,7 @@ extension AnimatedField {
         titleLabelTextFieldConstraint?.constant = -20
         UIView.animate(withDuration: 0.3) { [weak self] in
             self?.titleLabel.alpha = 0.0
+            self?.titleLabel.isHidden = true;
             self?.layoutIfNeeded()
         }
     }
