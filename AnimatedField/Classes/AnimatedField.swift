@@ -132,6 +132,9 @@ open class AnimatedField: UIView {
             if case AnimatedFieldType.url = type {
                 keyboardType = .URL
             }
+            if case AnimatedFieldType.optionaUrl = type {
+                keyboardType = .URL
+            }
             if case AnimatedFieldType.multiline = type {
                 showTextView(true)
                 setupTextViewConstraints()
@@ -512,7 +515,7 @@ extension AnimatedField {
         
         let validationExpression = type.validationExpression
         let regex = dataSource?.animatedFieldValidationMatches(self) ?? validationExpression
-        if let text = text, text != "", !text.isValidWithRegEx(regex) {
+        if let text = text, !text.isValidWithRegEx(regex) {
             return dataSource?.animatedFieldValidationError(self) ?? type.validationError
         }
         
